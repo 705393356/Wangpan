@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hcw.dao.UserDao">
+
+	<select id="CheckLogin" parameterType="User" resultType="User">
+		select * from user where username = #{username}
+	</select>
+	<select id="CreateUsernameById" resultType="User">
+		select id from user
+	</select>
+	<insert id="AddUser" parameterType="User" >
+		insert into user(name,username,password,identity) values(#{name},#{username},#{password},#{identity})
+	</insert>
+
+
+
+</mapper>
+
+
+
+
+
